@@ -30,6 +30,3 @@
 
 #Ignore credentials 
 /credentials.json
-
-#Ignore credentials again
-/app/assets/download_csv.py
