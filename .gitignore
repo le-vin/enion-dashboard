@@ -28,4 +28,8 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
+#Ignore credentials 
 /credentials.json
+
+#Ignore credentials again
+/app/assets/download_csv.py
