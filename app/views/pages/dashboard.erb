@@ -1,0 +1,49 @@
+<%
+require 'json'
+%>
+
+<%
+require 'csv'
+file = Dir["app/views/pages/*.csv"][0]
+all = CSV.read(file)
+head = all[0]
+csv = all.drop(1)
+%>
+<body>
+    <h1>Enion Dashboard</h1>
+
+    <div style="overflow-x:auto;display: block; border: 5px solid rgb(20, 0, 101); height: 70vh; overflow-y: scroll">
+        <table>
+            <thead>
+                <tr>
+                <th>Index</th>
+                <th>Company Name</th>
+                <th>Description</th>
+                <th>Business Model</th>
+                <th>Customer</th>
+                <th>Keywords</th>
+                <th>Stage</th>
+                <th>Total Funding</th>
+                <th>No. of Investors</th>
+                <th>Date founded</th>
+                <th>Location</th>
+                <th>Employees</th>
+                <th>Website</th>
+                </tr>
+            </thead>
+            <tbody>
+                <%@data_hash["data"].each do |row|%>
+                    <tr>
+                    <%row.each do |entity|%>
+                        <%if entity == nil%>
+                            <td>No information</td>
+                        <%else %>
+                            <td><%=entity%></td>
+                        <%end%>
+                    <%end%>
+                    </tr>
+                <%end%>
+        </tbody>
+        </table>
+    </div>
+</body>

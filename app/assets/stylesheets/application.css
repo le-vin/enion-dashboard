@@ -13,3 +13,31 @@
  *= require_tree .
  *= require_self
  */
+ body {
+     padding-right: 8vh;
+     padding-left: 8vh;
+ }
+ table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100vh;
+    height: 10vh;
+  }
+  
+  td, th {
+    border: 1px solid #9d9d9d;
+    text-align: left;
+    padding: 8px;
+  }
+
+  th {
+    background: rgb(20, 0, 101);
+    position: sticky;
+    top: 0; /* Don't forget this, required for the stickiness */
+    color: white;
+    margin: 0px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
