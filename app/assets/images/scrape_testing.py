@@ -4,6 +4,12 @@ import pandas as pd
 import bs4
 import boto3
 from io import StringIO
+import json
+
+f = open("./credentials.json")
+credentials = json.load(f)
+access_key  = credentials["aws_access_key_id"]
+secret_access_key = credentials["aws_secret_access_key"]
 
 class EUStartups:
     def __init__(self):
@@ -154,8 +160,8 @@ csv = EUStartups().get_csv()
 
 #Creating Session With Boto3.
 session = boto3.Session(
-aws_access_key_id= "AKIAWR35FRDT5QVPQY7P", 
-aws_secret_access_key= "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"
+aws_access_key_id= access_key, 
+aws_secret_access_key= secret_access_key
 )
 
 s3_res = session.resource('s3')
